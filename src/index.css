@@ -5,3 +5,8 @@
   font-family: "Gotham";
   src: url('Fonts/Gotham/Gotham-Bold-webfont.woff2')
 }
+
+@font-face {
+  font-family: "Replay";
+  src: url('Fonts/Replay/replay.ttf')
+}
