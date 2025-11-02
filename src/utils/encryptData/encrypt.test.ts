@@ -1,5 +1,5 @@
 import { test, expect } from 'vitest';
-import { getEncryptedText } from "./encryptData";
+import { getEncryptedText } from './encryptData';
 import { SHIFT } from '../../constants/constants';
 
 const PLAIN_TEXT = 'Hello there John!';
