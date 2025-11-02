@@ -9,7 +9,7 @@
       theme: {
         extend: {
           fontFamily: {
-            gotham: ['Gotham','sans-serif'],
+            alan: ['AlanSans','sans-serif'],
             replay: ['Replay', 'sans-serif']
           },
         },

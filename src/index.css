@@ -2,8 +2,8 @@
 @config "../tailwind.config.ts";
 
 @font-face {
-  font-family: "Gotham";
-  src: url('Fonts/Gotham/Gotham-Bold-webfont.woff2')
+  font-family: "AlanSans";
+  src: url('Fonts/AlanSans/AlanSans-Regular.ttf')
 }
 
 @font-face {
