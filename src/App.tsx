@@ -1,18 +1,41 @@
 import './App.css';
-import useApp from './customHooks/App/useApp';
 import Textfield from './components/Textfield';
+import EncryptionButtons from './customComponents/EncryptionButtons';
 
-function App() {
+import useApp from './customHooks/App/useApp';
 
-  const { inputText } = useApp();
+const App = () => {
+
+  const { 
+      inputText,
+      encryptedText,
+      handleInputText,
+      handleEncryption
+   } = useApp();
 
   return (
-    <>
-      <div className='font-replay text-5xl'>E N C R Y P T O</div>
-      <Textfield value={inputText} />
+    <div className='h-screen w-full shadow-2xl rounded-4xl shadow-gray-200 bg-white'>
+      <div className='flex justify-center'>
+        <div className='font-replay text-5xl m-14 px-3 pt-2 items-center bg-green-200 outline-none'>
+          E N C R Y P T O .
+        </div>
+      </div>
+      <div className='p-5 flex flex-row justify-center'>
+        <div className='flex flex-row font-alan relative'>
+          <Textfield 
+            value={inputText}
+            handleOnChange={handleInputText}
+            placeholder={'Enter text to encrypt...'}
+            styles={''}
+          />
+          <EncryptionButtons 
+            handleClick={handleEncryption} 
+          />
+        </div>
+      </div>
       {/* <EncryptedText value={encryptedText} /> */}
-    </>
+    </div>
   )
 }
 
-export default App
+export default App;

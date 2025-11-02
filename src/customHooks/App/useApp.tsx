@@ -1,13 +1,16 @@
 import React, { useCallback } from 'react';
+import { getEncryptedText } from '../../utils/encryptData';
+
+import { SHIFT } from '../../constants/constants';
 
 interface useAppResult {
     inputText: string,
     encryptedText: string,
     handleInputText: (value: string) => void,
-    handleEncryption: (value: string) => void
+    handleEncryption: () => void
 }
 
-const useApp = (props) : useAppResult => {
+const useApp = () : useAppResult => {
 
     const [inputText, setInputText] = React.useState<string>('');
     const [encryptedText, setEncryptedText] = React.useState<string>('');
@@ -18,14 +21,15 @@ const useApp = (props) : useAppResult => {
     );
 
     const handleEncryption = useCallback(
-        (value: string) => {
+        () => {
             try {
-                setEncryptedText(value);
+                // const encryptedText = getEncryptedText(inputText, SHIFT);
+                // setEncryptedText(encryptedText);
             } catch(err) {
-                console.log("Encryption Error ",err);
+                console.log("TextEncryption Error ",err);
             }
         }, 
-        [setEncryptedText]
+        [inputText, setEncryptedText]
     );
 
     return {
