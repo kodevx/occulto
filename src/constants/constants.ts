@@ -1,1 +1,1 @@
-export const SHIFT = 4;
+export const SHIFT = 3;
