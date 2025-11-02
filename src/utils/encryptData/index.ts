@@ -1,0 +1,1 @@
+export { getEncryptedText } from './encryptData';
