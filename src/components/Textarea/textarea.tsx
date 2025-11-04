@@ -1,20 +1,28 @@
 import React from 'react'
+interface StylesType {
+    root: string
+    placeholder: string
+}
 
 interface TextAreaProps {
     content: string | React.ReactNode
-    styles: string
+    styles: StylesType
     placeholder: string
 }
 
 const TextArea: React.FC<TextAreaProps> = (props) => {
 
-    const { content, styles, placeholder } = props;
+    const { 
+        content, 
+        styles, 
+        placeholder
+    } = props;
 
     return (
         <div>
-            <div className={styles}>
+            <div className={styles.root}>
                 {content ? content : (
-                    <div className='text-gray-300'>
+                    <div className={styles.placeholder}>
                         {placeholder}
                     </div>
                 )}
