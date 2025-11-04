@@ -12,10 +12,7 @@ const TextArea: React.FC<TextAreaProps> = (props) => {
 
     return (
         <div>
-            <div 
-                contentEditable={true}
-                className={styles}
-            >
+            <div className={styles}>
                 {content ? content : (
                     <div className='text-gray-300'>
                         {placeholder}
