@@ -1,7 +1,7 @@
 import React from 'react'
 
 interface TextAreaProps {
-    content: string
+    content: string | React.ReactNode
     styles: string
     placeholder: string
 }
@@ -12,12 +12,16 @@ const TextArea: React.FC<TextAreaProps> = (props) => {
 
     return (
         <div>
-            <textarea 
-                placeholder={placeholder} 
+            <div 
+                contentEditable={true}
                 className={styles}
             >
-                {content}
-            </textarea>
+                {content ? content : (
+                    <div className='text-gray-300'>
+                        {placeholder}
+                    </div>
+                )}
+            </div>
         </div>
     )
 }
