@@ -2,6 +2,7 @@ import React from 'react';
 
 interface ButtonProps {
     styles: string
+    disabled: boolean
     children?: React.ReactNode
     onClick: () => void 
 }
