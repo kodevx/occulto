@@ -15,7 +15,7 @@ const App = () => {
    } = useApp();
 
   return (
-    <div className='h-screen w-full shadow-2xl rounded-4xl shadow-gray-200 bg-white'>
+    <div className='w-full p-10 shadow-2xl rounded-4xl shadow-gray-200 bg-white'>
       <div className='flex justify-center'>
         <div className='font-replay text-3xl sm:text-5xl m-14 px-3 pt-2 items-center bg-green-200 outline-none'>
           E N C R Y P T O .
@@ -32,7 +32,7 @@ const App = () => {
           <EncryptionButtons handleClick={handleEncryption} />
         </div>
       </div>
-      <div className='flex justify-center'>
+      <div className='flex justify-center mb-5'>
         <TextArea 
           content={encryptedText} 
           placeholder={'QwkclsiDkOievnsS ....'} 
