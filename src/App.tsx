@@ -1,6 +1,7 @@
 import './App.css';
 import Textfield from './components/Textfield';
 import TextArea from './components/Textarea';
+
 import EncryptionButtons from './customComponents/EncryptionButtons';
 import CharactersAnimation from './components/CharatersAnimation';
 
@@ -10,6 +11,7 @@ const App = () => {
 
   const { 
       inputText,
+      isEncrypting,
       encryptedText,
       handleInputText,
       handleEncryption
@@ -35,9 +37,16 @@ const App = () => {
       </div>
       <div className='flex justify-center mb-5'>
         <TextArea 
-          content={encryptedText} 
+          content={
+            isEncrypting 
+              ? <CharactersAnimation /> 
+              : encryptedText
+          } 
           placeholder={'QwkclsiDkOievnsS ....'} 
-          styles={'w-[310px] xs:w-[400px] sm:w-[450px] md:w-[670px] lg:w-[900px] h-64 border-4 border-red-300 font-alan font-bold placeholder:text-gray-300 mt-10 rounded-lg p-8 shadow-2xl outline-none'} 
+          styles={{
+            root: `w-[310px] xs:w-[400px] sm:w-[450px] md:w-[670px] lg:w-[900px] text-3xl h-64 border-4 border-red-200 font-alan text-black font-bold mt-10 rounded-lg p-8 shadow-2xl outline-none`,
+            placeholder: 'text-gray-300'
+          }} 
         />
       </div>
     </div>
