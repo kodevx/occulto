@@ -26,7 +26,7 @@ const App = () => {
             value={inputText}
             handleOnChange={handleInputText}
             placeholder={'Enter text to encrypt...'}
-            styles={''}
+            styles={'h-14 w-[700px] text-lg placeholder-gray-300 font-medium rounded-full p-5 shadow-gray-300 shadow-xl outline-none '}
           />
           <EncryptionButtons 
             handleClick={handleEncryption} 
