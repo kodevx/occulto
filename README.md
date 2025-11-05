@@ -1,6 +1,6 @@
 # Occulto 
 
-### A web app which encrypt any text or number using ceasers cipher.
+### A web app which encrypt any text or number using Ceaser cipher.
 
 ### Modes of Encryption 🔒 
 * Caesar Cipher.  A  ->  C
