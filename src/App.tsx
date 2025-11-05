@@ -35,6 +35,7 @@ const App = () => {
           />
           <EncryptionButtons 
             isBusy={isBusy}
+            inputText={inputText}
             handleEncryption={handleEncryption} 
             handleDecryption={handleDecryption}
           />
