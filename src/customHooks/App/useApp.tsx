@@ -1,21 +1,22 @@
 import React, { useCallback } from 'react';
-import { getEncryptedText } from '../../utils/encryptData';
+import { getEncryptedText, getDecryptedText } from '../../utils/encryptData';
 
 import { SHIFT } from '../../constants/constants';
 
 interface useAppResult {
     inputText: string
-    encryptedText: string
-    isEncrypting: boolean
+    outputText: string
+    isBusy: boolean
     handleInputText: (value: string) => void
     handleEncryption: () => void
+    handleDecryption: () => void
 }
 
 const useApp = () : useAppResult => {
 
     const [inputText, setInputText] = React.useState<string>('');
-    const [encryptedText, setEncryptedText] = React.useState<string>('');
-    const [isEncrypting, setIsEncrypting] = React.useState<boolean>(false);
+    const [outputText, setOutputText] = React.useState<string>('');
+    const [isBusy, setIsBusy] = React.useState<boolean>(false);
 
     const handleInputText = useCallback(
         (value: string) => setInputText(value), 
@@ -25,33 +26,58 @@ const useApp = () : useAppResult => {
     const handleEncryption = useCallback(
         () => {
             try {
-                setIsEncrypting(true);
+                setIsBusy(true);
 
                 const encryptedText = getEncryptedText(inputText, SHIFT);
-                setEncryptedText(encryptedText);
+                setOutputText(encryptedText);
                 
             } catch(err) {
                 console.log("TextEncryption Error ",err);
             } finally {
                 setTimeout(
-                    () => setIsEncrypting(false),
+                    () => setIsBusy(false),
                     2000
                 );
             }
         }, 
         [
             inputText, 
-            setEncryptedText, 
-            setIsEncrypting
+            setOutputText, 
+            setIsBusy
+        ]
+    );
+
+    const handleDecryption = useCallback(
+        () => {
+            try {
+                setIsBusy(true);
+
+                const plainText = getDecryptedText(inputText, SHIFT);
+                setOutputText(plainText);
+                
+            } catch(err) {
+                console.log("TextEncryption Error ",err);
+            } finally {
+                setTimeout(
+                    () => setIsBusy(false),
+                    2000
+                );
+            }
+        }, 
+        [
+            inputText, 
+            setOutputText, 
+            setIsBusy
         ]
     );
 
     return {
         inputText,
-        isEncrypting,
-        encryptedText,
+        isBusy,
+        outputText,
         handleInputText,
-        handleEncryption
+        handleEncryption,
+        handleDecryption
     }
 }
 

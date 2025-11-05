@@ -10,11 +10,12 @@ import useApp from './customHooks/App/useApp';
 const App = () => {
 
   const { 
-      inputText,
-      isEncrypting,
-      encryptedText,
-      handleInputText,
-      handleEncryption
+        inputText,
+        isBusy,
+        outputText,
+        handleInputText,
+        handleEncryption,
+        handleDecryption
    } = useApp();
 
   return (
@@ -32,15 +33,19 @@ const App = () => {
             placeholder={'Enter text to encrypt...'}
             styles={'h-14 w-[320px] xs:w-[380px] sm:w-[380px] md:w-[600px] lg:w-[800px] text-lg placeholder-gray-300 font-medium rounded-full p-5 shadow-gray-300 shadow-xl outline-none'}
           />
-          <EncryptionButtons handleClick={handleEncryption} />
+          <EncryptionButtons 
+            isBusy={isBusy}
+            handleEncryption={handleEncryption} 
+            handleDecryption={handleDecryption}
+          />
         </div>
       </div>
       <div className='flex justify-center mb-5'>
         <TextArea 
           content={
-            isEncrypting 
+            isBusy 
               ? <CharactersAnimation /> 
-              : encryptedText
+              : outputText
           } 
           placeholder={'QwkclsiDkOievnsS ....'} 
           styles={{
