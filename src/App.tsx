@@ -44,7 +44,7 @@ const App = () => {
           } 
           placeholder={'QwkclsiDkOievnsS ....'} 
           styles={{
-            root: `w-[310px] xs:w-[400px] sm:w-[450px] md:w-[670px] lg:w-[900px] text-3xl h-64 border-4 border-red-200 font-alan text-black font-bold mt-10 rounded-lg p-8 shadow-2xl outline-none`,
+            root: `w-[310px] xs:w-[400px] sm:w-[450px] md:w-[670px] lg:w-[900px] text-3xl h-64 border-4 border-red-200 font-alan text-black font-bold mt-10 rounded-lg p-8 shadow-2xl outline-none overflow-auto`,
             placeholder: 'text-gray-300'
           }} 
         />
