@@ -3,7 +3,7 @@ import Textfield from './components/Textfield';
 import TextArea from './components/Textarea';
 
 import EncryptionButtons from './customComponents/EncryptionButtons';
-import CharactersAnimation from './components/CharatersAnimation';
+import CharactersAnimation from './components/CharactersAnimation';
 
 import useApp from './customHooks/App/useApp';
 
