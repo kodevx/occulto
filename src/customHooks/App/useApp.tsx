@@ -26,14 +26,16 @@ const useApp = () : useAppResult => {
         () => {
             try {
                 setIsEncrypting(true);
-                // const encryptedText = getEncryptedText(inputText, SHIFT);
-                // setEncryptedText(encryptedText);
+
+                const encryptedText = getEncryptedText(inputText, SHIFT);
+                setEncryptedText(encryptedText);
+                
             } catch(err) {
                 console.log("TextEncryption Error ",err);
             } finally {
                 setTimeout(
                     () => setIsEncrypting(false),
-                    4000
+                    2000
                 );
             }
         }, 
