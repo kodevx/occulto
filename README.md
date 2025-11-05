@@ -1,6 +1,6 @@
 # Occulto 
 
-### A web app which encrypt any text or number using ceasers ciphers & morse code.
+## A web app which encrypt any text or number using ceasers cipher.
 
 ### Modes of Encryption 🔒 
 * Caesars Cipher.  A  ->  C
@@ -16,7 +16,7 @@ Store: **Zustand**
 ### Design UI/UX 👩🏼‍🎨
 
 #### Desktop
-![alt text](https://github.com/kodevx/search-vite/blob/main/public/screenshots/desktop.png?raw=true)
+![alt text](https://github.com/kodevx/occulto/blob/main/public/screenshots/desktop.png?raw=true)
 
 #### Mobile
-![alt text](https://github.com/kodevx/search-vite/blob/main/public/screenshots/mobile.png?raw=true)
+![alt text](https://github.com/kodevx/occulto/blob/main/public/screenshots/mobile.png?raw=true)
