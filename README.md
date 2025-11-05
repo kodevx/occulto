@@ -4,7 +4,6 @@
 
 ### Modes of Encryption 🔒 
 * Caesars Cipher.  A  ->  C
-* Morse Code.  A  ->  ._
 
 ### Tech Stack 🧑🏻‍💻
 Frontend: **React, Typescript, Vite**
@@ -13,7 +12,7 @@ Store: **Zustand**
 ### Encryption Mode 🫆
 * Caesars Cipher
   - Cipher plain text, implment custom shift of alphabets.
-  - 
+  
 ### Design UI/UX 👩🏼‍🎨
 
 #### Desktop
