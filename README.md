@@ -11,7 +11,7 @@ Store: **Zustand**
 
 ### Encryption Mode 🫆
 * Caesars Cipher
-  - Cipher plain text, implment custom shift of alphabets.
+  - Cipher plain text, implement custom shift of alphabets.
 
 ### Design UI/UX 👩🏼‍🎨
 
