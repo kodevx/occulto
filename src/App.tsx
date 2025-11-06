@@ -1,22 +1,31 @@
 import './App.css';
+
 import Textfield from './components/Textfield';
 import TextArea from './components/Textarea';
+import Counter from './components/Counter';
 
 import EncryptionButtons from './customComponents/EncryptionButtons';
 import CharactersAnimation from './components/CharactersAnimation';
 
 import useApp from './customHooks/App/useApp';
 
+import {
+   DECREMENT_SHIFT, 
+   INCREMENT_SHIFT 
+} from './constants/constants';
+
 const App = () => {
 
-  const { 
-        inputText,
-        isBusy,
-        outputText,
-        handleInputText,
-        handleEncryption,
-        handleDecryption
-   } = useApp();
+    const { 
+      shift,
+      isBusy,
+      inputText,
+      outputText,
+      handleShift,
+      handleInputText,
+      handleEncryption,
+      handleDecryption
+    } = useApp();
 
   return (
     <div className='w-full p-10 shadow-2xl rounded-4xl shadow-gray-200 bg-white'>
@@ -25,13 +34,13 @@ const App = () => {
           O C C U L T O .
         </div>
       </div>
-      <div className='flex flex-row justify-center'>
+      <div className='flex flex-col md:flex-row justify-around items-center'>
         <div className='flex flex-row font-alan relative'>
           <Textfield 
             value={inputText}
             handleOnChange={handleInputText}
             placeholder={'Enter text to encrypt...'}
-            styles={'h-14 w-[320px] xs:w-[380px] sm:w-[380px] md:w-[600px] lg:w-[800px] text-lg placeholder-gray-300 font-medium rounded-full p-5 shadow-gray-300 shadow-xl outline-none'}
+            styles={'h-14 w-[320px] xs:w-[380px] sm:w-[380px] md:w-[500px] lg:w-[700px] text-lg placeholder-gray-300 font-medium rounded-full p-5 shadow-gray-300 shadow-xl outline-none'}
           />
           <EncryptionButtons 
             isBusy={isBusy}
@@ -40,6 +49,11 @@ const App = () => {
             handleDecryption={handleDecryption}
           />
         </div>
+        <Counter 
+          value={shift}
+          handleIncrement={() => handleShift(INCREMENT_SHIFT)} 
+          handleDecrement={() => handleShift(DECREMENT_SHIFT)} 
+        />
       </div>
       <div className='flex justify-center mb-5'>
         <TextArea 
