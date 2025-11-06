@@ -1,12 +1,18 @@
 import React, { useCallback } from 'react';
-import { getEncryptedText, getDecryptedText } from '../../utils/encryptData';
+import { getEncryptedText, getDecryptedText } from '../../utils/encryptUtils';
 
-import { SHIFT } from '../../constants/constants';
+import { 
+    SHIFT, 
+    INCREMENT_SHIFT, 
+    DECREMENT_SHIFT 
+} from '../../constants/constants';
 
 interface useAppResult {
+    shift: number
+    isBusy: boolean
     inputText: string
     outputText: string
-    isBusy: boolean
+    handleShift: (action: string) => void
     handleInputText: (value: string) => void
     handleEncryption: () => void
     handleDecryption: () => void
@@ -16,6 +22,9 @@ const useApp = () : useAppResult => {
 
     const [inputText, setInputText] = React.useState<string>('');
     const [outputText, setOutputText] = React.useState<string>('');
+
+    const [shift, setShift] = React.useState(SHIFT);
+
     const [isBusy, setIsBusy] = React.useState<boolean>(false);
 
     const handleInputText = useCallback(
@@ -23,12 +32,23 @@ const useApp = () : useAppResult => {
         [setInputText]
     );
 
+    const handleShift = useCallback(
+        (action: string) => {
+            if(action === INCREMENT_SHIFT) {
+                setShift(prevValue => prevValue + 1);
+            } else if(action === DECREMENT_SHIFT) {
+                setShift(prevValue => prevValue - 1)
+            }
+        }, 
+        [setShift]
+    );
+
     const handleEncryption = useCallback(
         () => {
             try {
                 setIsBusy(true);
 
-                const encryptedText = getEncryptedText(inputText, SHIFT);
+                const encryptedText = getEncryptedText(inputText, shift);
                 setOutputText(encryptedText);
                 
             } catch(err) {
@@ -41,6 +61,7 @@ const useApp = () : useAppResult => {
             }
         }, 
         [
+            shift,
             inputText, 
             setOutputText, 
             setIsBusy
@@ -72,9 +93,11 @@ const useApp = () : useAppResult => {
     );
 
     return {
-        inputText,
+        shift,
         isBusy,
+        inputText,
         outputText,
+        handleShift,
         handleInputText,
         handleEncryption,
         handleDecryption
