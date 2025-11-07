@@ -3,6 +3,7 @@ import './App.css';
 import Textfield from './components/Textfield';
 import TextArea from './components/Textarea';
 import Counter from './components/Counter';
+import Footer from './customComponents/Footer';
 
 import EncryptionButtons from './customComponents/EncryptionButtons';
 import CharactersAnimation from './components/CharactersAnimation';
@@ -69,6 +70,7 @@ const App = () => {
           }} 
         />
       </div>
+      <Footer />
     </div>
   )
 }
