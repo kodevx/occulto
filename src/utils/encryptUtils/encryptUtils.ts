@@ -1,4 +1,4 @@
-// Encrypt Data using Caesar's Cipher Encryption
+// Encrypt/Decrypt data using Caesar's Cipher Encryption
 
 export const getEncryptedText = (text: string, shift: number) => {
     let encryptedString: string = '';

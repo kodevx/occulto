@@ -1,27 +1,27 @@
-import { create } from 'zustand';
+// import { create } from 'zustand';
 
-interface StoreType {
-    texts: string[]
-    addText: (text: string) => void
-}
+// interface StoreType {
+//     texts: string[]
+//     addText: (text: string) => void
+// }
 
-const store =  create<StoreType>()((set) => ({
-    texts: [],
-    addText: (text) => {
-        set((state) => ({
-            ...state,
-            texts: [...state.texts, text]
-        }))
-    }
-}));
+// const store =  create<StoreType>()((set) => ({
+//     texts: [],
+//     addText: (text) => {
+//         set((state) => ({
+//             ...state,
+//             texts: [...state.texts, text]
+//         }))
+//     }
+// }));
 
-const useStore = () => {
-    const { texts, addText } = store();
+// const useStore = () => {
+//     const { texts, addText } = store();
 
-    return {
-        texts,
-        addText
-    }
-}
+//     return {
+//         texts,
+//         addText
+//     }
+// }
 
-export default useStore;
+// export default useStore;
