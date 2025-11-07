@@ -3,7 +3,7 @@
 ### A web app which encrypt any text or number using Ceaser cipher.
 
 ### Modes of Encryption 🔒 
-* Caesar Cipher.  A  ->  C
+* Caesar Cipher.  A  ->  D (Shift by '3')
 
 ### Tech Stack 🧑🏻‍💻
 Frontend: **React, Typescript, Vite**
