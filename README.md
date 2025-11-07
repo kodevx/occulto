@@ -7,7 +7,7 @@
 
 ### Tech Stack 🧑🏻‍💻
 Frontend: **React, Typescript, Vite**
-Store: **Zustand**
+<!-- Store: **Zustand** -->
 
 ### Encryption Mode 🫆
 * Caesars Cipher
