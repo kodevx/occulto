@@ -2,16 +2,12 @@
 
 ### A web app which encrypts/decrypts any text using Ceaser cipher.
 
-### Modes of Encryption 🔒 
+### Modes of Encryption 🫆  
 * Caesar Cipher.  A  ->  D (Shift by '3')
 
 ### Tech Stack 🧑🏻‍💻
 Frontend: **React, Typescript, Vite**
 <!-- Store: **Zustand** -->
-
-### Encryption Mode 🫆
-* Caesars Cipher
-  - Cipher plain text, implement custom shift of alphabets.
 
 ### Design UI/UX 👩🏼‍🎨
 
