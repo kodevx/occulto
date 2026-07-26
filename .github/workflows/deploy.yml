@@ -1,0 +1,54 @@
+# This workflow will build the vite based app
+
+name: CI Production Workflow
+
+on:
+  push: 
+    branches: [ "main" ]
+  pull_request: 
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs: 
+  build: 
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: https://kodevx.github.io/occulto/
+  
+    steps:
+    - name: Checkout the Repository
+      uses: actions/checkout@v4
+
+      
+    - name: Setup Node.js 22
+      uses: actions/setup-node@v4
+      with:
+          node-version: '22'
+          cache: 'yarn'
+          
+    - name: Install Yarn 1
+      run: npm install -g yarn@1.22.10
+
+    - name: Install Dependencies
+      run: yarn install --frozen-lockfile
+
+    - name: Generate Project Build
+      run: yarn build
+
+    - name: Setup GitHub Pages
+      uses: actions/configure-pages@v5
+
+    - name: Upload Pages Artifact
+      uses: actions/upload-pages-artifact@v3
+      with: 
+        path: ./dist
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
