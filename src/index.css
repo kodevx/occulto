@@ -3,10 +3,10 @@
 
 @font-face {
   font-family: "AlanSans";
-  src: url('Fonts/AlanSans/AlanSans-Regular.ttf')
+  src: url('/occulto/Fonts/AlanSans/AlanSans-Regular.ttf')
 }
 
 @font-face {
   font-family: "Replay";
-  src: url('Fonts/Replay/replay.ttf')
+  src: url("/occulto/Fonts/Replay/replay.ttf") format("truetype");
 }
