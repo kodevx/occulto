@@ -1,6 +1,6 @@
 # This workflow will build the vite based app
 
-name: CI Production Workflow
+name: CI/CD Production Workflow
 
 on:
   push: 
